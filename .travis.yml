@@ -1,22 +1,17 @@
 language: java
 jdk: oraclejdk8
-
 install: true
 script:
-  - ./mvnw clean install
-  - bash <(curl -s https://codecov.io/bash)
-
+- "./mvnw clean install"
+- bash <(curl -s https://codecov.io/bash)
 cache:
   directories:
-    - $HOME/.m2
-
-
+  - "$HOME/.m2"
 deploy:
-  -
-    on:
-      branch: release
-    provider: bintray
-    skip_cleanup: true
-    file: target/bin/bintray.json
-    user: triippz
-    key: $BINTRAY_API_KEY
+  branch: release
+  provider: bintray
+  skip_cleanup: true
+  file: target/bin/bintray.json
+  user: triippz
+  key:
+    secure: GYMaAnm9Rwba/iBNVn+k2XzFvkiUz7jhPucXXUUHx9elmC5M1ZbFoaK7kH4hmP+0YtiuaWCA9ocm2C0zkulj5lbLfUzAl8r6XvOtPDdfq7KgJeF4CV6EolQyjAUS6KKWkqrMyjmD3j6RWkx1p6xaRwmIKQqsYD0LWBi3v8KxPOOyMisIs9XTL+IuMCJxZHMuh9ntOap2csin9tHe3/zR2JovYqLVFVRiWpj/GP7x8r6hryZIayxfpd6D4rcSBaYmeb1bSrycLinvgXQVftoUL0pQcnjWRHRa8+DyhYz5N+Cct+i0zHzvIjp+L+tMxjsTdc7/232ed4YWCz4XHl5j8/3XX17nfhcOehCGX3skVO06RctF/O+B+OBaXlC/9K0hY82+vFrhxKw8xvrYR2FxtNW+/HmpzQ3Gk/7VVVhcz5qLEMC8p9X7J1tPkiMzOBP/Dv5wGWkqeWacZpUdHcDtChEEnG0xdA4Hk2ZBOMsjv2+1vdrlO6hwHf+DHf6dIucm4gtbm/CtXNkVQgs81DZA2XPGuOBfMv4k/Tzh70ZM8L5/EfKBYBlLniuPINLOUKMFqqtM2GWJY0tNAERpAyywHra0k6KdXXlXuz5aT56xnkpzSRaVRC1UO7jvw/AqZLyBsa0rK1LVaQ7fq9jiMcnmlhl2ecX6rEvfpRVVtBEZM2E=
